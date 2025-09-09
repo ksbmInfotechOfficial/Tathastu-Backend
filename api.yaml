@@ -1,0 +1,71 @@
+swagger: "2.0"
+info:
+  title: Miln Sathii
+  description: This is Miln sathii  API Documentation
+  version: 1.0
+  contact:
+    email: ksbmabhishek2023@gmail.com
+  liscence:
+    name: Apache 2.0
+    url: "http://www.apache.org/liscences/LIS"
+  servers:
+    -url: http://localhost:5000
+    description: THis is my local Server
+    -url: http://localhost:5000/
+    description: This is my original URL
+schemes: [https,http]
+
+paths:
+#Returns a User
+  /api/v1/user_profile:
+    get:
+      summary: Returns user profile detail.
+      description: People Who are already registered
+      responses:
+        200:    # status code
+          description: Successul Response
+          schema: 
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+
+
+ # Register user
+#Post json/body & Body required
+  /api/v1/user_register:
+    post:
+      summary: Adds a new user
+      produces:
+        - application/json
+      consumes:
+        - multipart/form-data
+      parameters:
+        - in: body
+          name: body
+
+          schema:
+            type: object
+            required:
+              - name
+              - email
+              - mobile
+              - password
+            properties:
+              name:
+                type: string
+              email:
+                type: string
+              mobile:
+                type: string
+              password:
+                type: string
+              image:
+                type: string      
+      responses:
+        '200':
+          description: OK
+
+          

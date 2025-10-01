@@ -229,15 +229,15 @@ exports.createRazorpayOrder = async function (req, res) {
       return res.status(200).send({ status: false, message: "amount field is required", });
     }
 
-    // var instance = new Razorpay({
-    //   key_id: 'rzp_test_7FcETDDAqUcnFu', // Replace with your Razorpay Key
-    //   key_secret: 'utSY0U8YmaNjuvEmJ7HBP1XA', // Replace with your Razorpay Secret Key
-    // });
-
-     var instance = new Razorpay({
-      key_id: 'rzp_test_KdQkg4iGuqKFIH', // Replace with your Razorpay Key
-      key_secret: 'bB0jbwrN2RaXVhmvVgAnfZaK', // Replace with your Razorpay Secret Key
+    var instance = new Razorpay({
+      key_id: 'rzp_test_7FcETDDAqUcnFu', // Replace with your Razorpay Key
+      key_secret: 'utSY0U8YmaNjuvEmJ7HBP1XA', // Replace with your Razorpay Secret Key
     });
+
+    //  var instance = new Razorpay({
+    //   key_id: 'rzp_test_KdQkg4iGuqKFIH', // Replace with your Razorpay Key
+    //   key_secret: 'bB0jbwrN2RaXVhmvVgAnfZaK', // Replace with your Razorpay Secret Key
+    // });
 
 
     // var instance = new Razorpay({

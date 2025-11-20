@@ -3,7 +3,7 @@ const querystring = require('querystring');
 module.exports = {
     smsOTp:async(mobile,otp) => {
         const number = mobile;
-        const key = `464D07E16C9D5B`; 
+        const key = `56661ADC561B64`; 
         const senderid = 'SPTSMS';
         const message = `Your otp is ${otp} SELECTIAL`;
 

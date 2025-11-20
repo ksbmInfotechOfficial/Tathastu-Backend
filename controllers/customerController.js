@@ -234,16 +234,16 @@ exports.createRazorpayOrder = async function (req, res) {
     //   key_secret: 'utSY0U8YmaNjuvEmJ7HBP1XA', // Replace with your Razorpay Secret Key
     // });
 
-    //  var instance = new Razorpay({
-    //   key_id: 'rzp_test_KdQkg4iGuqKFIH', // Replace with your Razorpay Key
-    //   key_secret: 'bB0jbwrN2RaXVhmvVgAnfZaK', // Replace with your Razorpay Secret Key
-    // });
-
-
-    var instance = new Razorpay({
-      key_id: 'rzp_live_fycM10IO0gAtF9', // Replace with your Razorpay Key
-      key_secret: 'MjuXvZiu60d6BXwqgr2SDXNW', // Replace with your Razorpay Secret Key
+     var instance = new Razorpay({
+      key_id: 'rzp_test_KdQkg4iGuqKFIH', // Replace with your Razorpay Key
+      key_secret: 'bB0jbwrN2RaXVhmvVgAnfZaK', // Replace with your Razorpay Secret Key
     });
+
+
+    // var instance = new Razorpay({
+    //   key_id: 'rzp_live_fycM10IO0gAtF9', // Replace with your Razorpay Key
+    //   key_secret: 'MjuXvZiu60d6BXwqgr2SDXNW', // Replace with your Razorpay Secret Key
+    // });
 
     const response = await instance.orders.create({
       "amount": amount * 100,  // Amount in paise
@@ -677,6 +677,8 @@ exports.bookSession = async (req, res) => {
       sessionsToDeduct,
     } = req.body;
 
+    console.log(req.body);
+
     if (!userId) {
       return res.status(400).json({
         success: false,
@@ -995,6 +997,8 @@ exports.addPurchase = (req, res) => {
     purchaseDate,
     purchaseFor
   } = req.body;
+
+  console.log(req.body, 'test ');
 
   const newPurchase = new PurchaseHistory({
     userId,

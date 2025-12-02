@@ -253,10 +253,10 @@ exports.createRazorpayOrder = async function (req, res) {
     console.log("resposne",response)
 
     if (response?.status == 'created') {
-      return res.status(200).json({ success: true, data: response });
+      return res.status(200).json({ success: true, data: response,key: 'rzp_test_KdQkg4iGuqKFIH'});
     }
 
-    return res.status(200).json({ success: false, message: "Order not created", });
+    return res.status(200).json({ success: false, message: "Order not created",key: 'rzp_test_KdQkg4iGuqKFIH' });
   } catch (error) {
     return res.status(500).json({ success: false, message: error });
   }
